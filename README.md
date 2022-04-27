@@ -1,1 +1,1 @@
-# vd-parent-pom
+# vd-parent
