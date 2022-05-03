@@ -28,7 +28,10 @@ jobs:
     - name: staging
       run: mkdir staging && cp pom.xml staging
     - name: upload-artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: Package
-        path: staging
+      run: mvn -B deploy
+      env:
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+#      uses: actions/upload-artifact@v3
+#      with:
+#        name: Package
+#        path: staging
